@@ -77,7 +77,27 @@ Via FTP or cPanel File Manager, set these permissions:
 5. Check that file uploads work (try uploading an item image)
 
 ## Troubleshooting
-- **White page**: Check PHP error logs in cPanel → Errors
+
+### Halaman Kosong/Putih (Blank White Page)
+Ini adalah masalah paling umum. Penyebab dan solusinya:
+
+1. **Database connection gagal** — Pastikan `DB_HOST`, `DB_USER`, `DB_PASS`, `DB_NAME` di `app/config/config.php` sudah benar sesuai pengaturan InfinityFree Anda.
+
+2. **Error PHP tidak ditampilkan** — Server mungkin menyembunyikan error. Cek di cPanel → **Errors** atau **Raw Access Logs** untuk melihat pesan error sebenarnya.
+
+3. **Kredensial database salah** — Contoh:
+   - `DB_HOST` harus `localhost` (bukan `127.0.0.1:33060`)
+   - `DB_USER` harus username database InfinityFree Anda
+   - `DB_PASS` harus password database InfinityFree Anda
+   - `DB_NAME` harus nama database InfinityFree Anda
+
+4. **File tidak ter-upload dengan benar** — Pastikan `index.php` ada di root direktori web (public_html/htdocs), bukan di dalam folder `public/`.
+
+5. **mod_rewrite tidak aktif** — Cek di cPanel → **Apache Modules** → pastikan `mod_rewrite` diaktifkan.
+
+6. **PHP version tidak kompatibel** — Pastikan PHP 7.4+ aktif di cPanel → **MultiPHP Manager**.
+
+### Error Lainnya
 - **Database connection failed**: Verify DB credentials in `app/config/config.php`
 - **404 on all pages**: Ensure `mod_rewrite` is enabled and `.htaccess` is being read
 - **CSS not loading**: Verify `BASEURL` is correct and assets are in the right path
