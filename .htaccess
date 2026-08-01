@@ -1,0 +1,9 @@
+<FilesMatch "\.(env|log|sql|md|yml|yaml|xml|dist|lock)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^app/ - [F,L]
+    RewriteRule ^config/ - [F,L]
+</IfModule>
