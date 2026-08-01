@@ -25,11 +25,15 @@ The `BASEURL` is auto-detected from the current request — no manual update nee
 
 ## Step 3: Upload Files to InfinityFree
 1. Connect to your InfinityFree hosting via **FTP** (FileZilla or Cyberduck)
-2. Navigate to `public_html/` (this is your web root)
+2. Navigate to your **web root directory** — it could be any of these:
+   - `public_html/` (most common)
+   - `htdocs/`
+   - `www/`
+   - `httpdocs/`
 3. Upload the entire project, ensuring the following structure:
 
 ```
-public_html/
+<web_root>/
 ├── index.php              ← Front controller
 ├── .htaccess              ← URL rewriting rules
 ├── .gitignore             ← Excludes sensitive files
@@ -50,6 +54,8 @@ public_html/
 │   └── views/
 └── DEPLOYMENT.md          ← This file
 ```
+
+> **Note:** If your hosting uses `htdocs` instead of `public_html`, simply upload to the `htdocs/` folder instead. The structure is the same.
 
 ## Step 4: Verify .htaccess
 Make sure `mod_rewrite` is enabled on your InfinityFree hosting. The `.htaccess` file handles URL rewriting automatically.
