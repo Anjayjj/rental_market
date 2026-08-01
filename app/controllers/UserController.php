@@ -65,7 +65,7 @@ class UserController extends Controller {
         // Default avatar adalah avatar yang sedang dipakai saat ini
        // Default avatar adalah avatar yang sedang dipakai saat ini
        $avatar = $_SESSION['user_avatar']; 
-       $target_dir = __DIR__ . '/../../public/assets/uploads/avatars/';
+       $target_dir = __DIR__ . '/../../assets/uploads/avatars/';
 
        // CEK 1: APAKAH USER MEMINTA UNTUK MENGHAPUS FOTO? (KEMBALI KE DEFAULT)
        if (isset($_POST['remove_avatar']) && $_POST['remove_avatar'] == '1') {
