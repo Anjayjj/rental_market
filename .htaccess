@@ -1,9 +1,4 @@
-<FilesMatch "\.(env|log|sql|md|yml|yaml|xml|dist|lock)$">
-    Require all denied
-</FilesMatch>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^app/ - [F,L]
-    RewriteRule ^config/ - [F,L]
-</IfModule>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

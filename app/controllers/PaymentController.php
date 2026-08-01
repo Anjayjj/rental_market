@@ -64,7 +64,7 @@ class PaymentController extends Controller {
             }
 
             // 3. Persiapan Folder & Generate Nama File Aman
-            $upload_dir = '../public/assets/uploads/payments/';
+            $upload_dir = '../assets/uploads/payments/';
             
             // SOLUSI ERROR FOLDER: Buat folder otomatis jika belum ada!
             if (!is_dir($upload_dir)) {

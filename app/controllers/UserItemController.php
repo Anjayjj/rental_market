@@ -52,7 +52,7 @@ class UserItemController extends Controller {
                 if (in_array($mime, ['image/jpeg', 'image/png', 'image/webp'])) {
                     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
                     $filename = 'item_' . time() . '_' . uniqid() . '.' . $ext;
-                    $upload_path = '../public/assets/uploads/items/' . $filename;
+                    $upload_path = '../assets/uploads/items/' . $filename;
 
                     if (move_uploaded_file($file['tmp_name'], $upload_path)) {
                         
@@ -132,7 +132,7 @@ class UserItemController extends Controller {
                 if (in_array($mime, ['image/jpeg', 'image/png', 'image/webp'])) {
                     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
                     $filename = 'item_' . time() . '_' . uniqid() . '.' . $ext;
-                    $upload_path = '../public/assets/uploads/items/' . $filename;
+                    $upload_path = '../assets/uploads/items/' . $filename;
 
                     move_uploaded_file($file['tmp_name'], $upload_path);
                 } else {
